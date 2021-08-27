@@ -9,11 +9,11 @@
       />
     </div>
     <div id="areaResultado">
-      <ul>
-        <li v-for="serie in seriesEncontradas" v-bind:key="serie.id">
-          {{ serie.nome }}
-        </li>
-      </ul>
+      <CardSerie
+        v-for="serie in seriesEncontradas"
+        v-bind:key="serie.id"
+        :serie="serie"
+      />
     </div>
   </div>
 </template>
@@ -21,10 +21,12 @@
 <script lang="ts">
 import { Serie } from "@/models/Serie";
 import { SeriesStore } from "@/store/modules/SeriesStore";
-import { Vue } from "vue-class-component";
+import { Options, Vue } from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 import store from "../store/index";
+import CardSerie from "../components/CardSerie.vue";
 
+@Options({ components: { CardSerie } })
 export default class Home extends Vue {
   filtro: string = "";
   seriesStore = getModule(SeriesStore, store);
@@ -47,7 +49,7 @@ export default class Home extends Vue {
 }
 
 #areaPesquisa {
-  margin: auto;
+  margin: auto auto 50px auto;
   text-align: center;
 
   input {
@@ -66,5 +68,10 @@ export default class Home extends Vue {
       box-shadow: 2px 2px 5px #89c4f4, -2px -2px 5px #89c4f4;
     }
   }
+}
+
+#areaResultado {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

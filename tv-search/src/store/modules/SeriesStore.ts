@@ -9,9 +9,19 @@ const http = axios.create({
 @Module({ name: 'SeriesStore' })
 export class SeriesStore extends VuexModule {
     private _series: Serie[] = []
+    private _serieEscolhida!: Serie
 
     get seriesEncontradas() {
         return this._series
+    }
+
+    get serieEscolhida() {
+        return this._serieEscolhida
+    }
+
+    @Action
+    atualizarSerie(serie: Serie) {
+        this.context.commit('_atualizarSerieEscolhida', serie)
     }
 
     @Action
@@ -38,5 +48,10 @@ export class SeriesStore extends VuexModule {
     @Mutation
     _atualizarSeries(series: Serie[]) {
         this._series = series
+    }
+
+    @Mutation
+    _atualizarSerieEscolhida(serie: Serie) {
+        this._serieEscolhida = serie
     }
 }

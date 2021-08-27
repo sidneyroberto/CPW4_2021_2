@@ -1,7 +1,9 @@
 <template>
   <div id="header">
     <img :src="logo" alt="Logo do TV Search" />
-    <span>TV Search</span>
+    <router-link to="/">
+      <span>TV Search</span>
+    </router-link>
   </div>
 </template>
 
@@ -33,6 +35,15 @@ export default {
     color: white;
     font-family: "secondary";
     font-size: 300%;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #59abe3;
+    }
   }
 }
 </style>

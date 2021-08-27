@@ -21,7 +21,7 @@ export class Serie {
         this._urlThumb =
             objSerie['image']
                 ? objSerie['image']['medium']
-                : '../assets/img/noimage.png'
+                : 'noimage'
         const objCanal =
             objSerie['webChannel']
                 ? objSerie['webChannel']['country']
