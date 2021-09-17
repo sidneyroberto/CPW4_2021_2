@@ -3,7 +3,7 @@ import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators'
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL: process.env.VUE_APP_URL_API
+    baseURL: "https://api.tvmaze.com/search/shows"
 })
 
 @Module({ name: 'SeriesStore' })

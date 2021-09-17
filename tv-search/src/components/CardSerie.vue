@@ -69,4 +69,10 @@ export default class CardSerie extends Vue {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .cardSerie {
+    width: 100%;
+  }
+}
 </style>

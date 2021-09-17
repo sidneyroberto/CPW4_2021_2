@@ -74,4 +74,13 @@ export default class Home extends Vue {
   display: flex;
   flex-wrap: wrap;
 }
+
+@media only screen and (max-width: 600px) {
+  #areaPesquisa {
+    input {
+      width: 80%;
+      text-align: center;
+    }
+  }
+}
 </style>

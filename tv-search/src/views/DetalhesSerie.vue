@@ -57,4 +57,25 @@ export default class DetalhesSerie extends Vue {
     width: 50%;
   }
 }
+
+#dadosSerie {
+  p {
+    font-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #cartazSerie {
+    width: 100%;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  #dadosSerie {
+    width: 100%;
+    text-align: center;
+  }
+}
 </style>
