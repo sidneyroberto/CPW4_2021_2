@@ -8,10 +8,14 @@ export class Task {
     priorityLevel: PriorityLevel
     deadline: Date
 
-    constructor(description: string, priorityLevel: PriorityLevel, deadline: Date) {
+    constructor(
+        description: string,
+        priorityLevel: PriorityLevel,
+        deadline: Date,
+        id?: number) {
         this.description = description
         this.priorityLevel = priorityLevel
         this.deadline = deadline
-        this.id = -1
+        this.id = id
     }
 }

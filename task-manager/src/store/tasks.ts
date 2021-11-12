@@ -13,12 +13,17 @@ const loadTasks = async (): Promise<Task[]> => {
     let tasks: Task[] = []
     if (data) {
         tasks = data.map((result: any) => {
-            const { description, priorityLevel, deadline } = result
-            return new Task(description, priorityLevel, new Date(deadline))
+            const { description, priorityLevel, deadline, id } = result
+            return new Task(description, priorityLevel, new Date(deadline), id)
         })
     }
 
     return tasks
+}
+
+export const updateTasks = async () => {
+    const tasks = await loadTasks();
+    currentTasks.update(value => value = tasks);
 }
 
 export let currentTasks = writable<Task[]>(await loadTasks())
